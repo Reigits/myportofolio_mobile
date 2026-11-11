@@ -9,6 +9,13 @@ class MyHomePage extends StatelessWidget
       final String nama = "Burhan";
       final String kelas = "PBP A";
 
+      final List<ItemHomepage> items = 
+      [
+        ItemHomepage("Lihat Proyek", Icons.folder),
+        ItemHomepage("Tambah Proyek", Icons.add_circle),
+        ItemHomepage("Logout", Icons.logout),
+      ];
+
       @override
       Widget build(BuildContext context) 
       {
