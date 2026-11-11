@@ -64,3 +64,11 @@ class InfoCard extends StatelessWidget
     );
   }
 }
+
+class ItemHomepage 
+{
+  final String name;
+  final IconData icon;
+
+  ItemHomepage(this.name, this.icon);
+}
