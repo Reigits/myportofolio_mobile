@@ -2,7 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 class LeftDrawer extends StatelessWidget
 {
-    const LeftDrawer({super.key})
+    const LeftDrawer({super.key});
 
     @override
     Widget build(BuildContext context)
