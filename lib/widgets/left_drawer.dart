@@ -13,7 +13,40 @@ class LeftDrawer extends StatelessWidget
             (
                 children: 
                 [
-                    const DrawerHeader(child: Text("MyPortofolio Options")),
+                    const DrawerHeader
+                    (
+                        decoration: BoxDecoration
+                        (
+                            color: Colors.indigo,
+                        ),
+                        child: Column
+                        (
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: 
+                        [
+                            Text
+                            (
+                                "My Portfolio",
+                                style: TextStyle
+                                (
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                )
+                            ),
+                            SizedBox(height: 10),
+                            Text
+                            (
+                                "Explore personal projects and experience!",
+                                style: TextStyle
+                                (
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                )
+                            )
+                        ],
+                        )
+                    ),
                     ListTile
                     (
                       leading: const Icon(Icons.home_outlined),
