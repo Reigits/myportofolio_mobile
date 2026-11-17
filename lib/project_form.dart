@@ -13,6 +13,21 @@ class _ProjectFormPageState extends State<ProjectFormPage>
 {
     final _formKey = GlobalKey<FormState>();
 
+    String _projectName = "";
+    String _description = "";
+    String _category = "Web Development";
+    String _technologies = "";
+    String _projectLink = "";
+
+    final List<String> _categories = 
+    [
+    'Web Development',
+    'Mobile Development',
+    'Machine Learning',
+    'Data Science',
+    'Other',
+    ];
+
     @override
     Widget build(BuildContext context)
     {
@@ -31,7 +46,137 @@ class _ProjectFormPageState extends State<ProjectFormPage>
            body: Form
            (
                 key: _formKey,
-                child: SingleChildScrollView()
+                child: SingleChildScrollView
+                (
+                    child: Column
+                    (
+                        crossAxisAlignment: CrossAxisAlignment.start, 
+                        children: 
+                        [
+                            // === Project Name ===
+                            Padding
+                            (
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextFormField
+                                (
+                                    decoration: InputDecoration
+                                    (
+                                        hintText: "Nama Proyek",
+                                        labelText: "Nama Proyek",
+                                        border: OutlineInputBorder
+                                        (
+                                            borderRadius: BorderRadius.circular(5.0)
+                                        )
+                                    ),
+                                    onChanged: (String? value)
+                                    {
+                                        setState(() => _projectName = value!);
+                                    },
+                                    validator: (String? value)
+                                    {
+                                        if (value == null || value.trim().isEmpty)
+                                        {
+                                            return "Nama proyek tidak boleh kosong!";
+                                        }
+                                        return null;
+                                    }
+                                )
+                            ),
+                            Padding
+                            (
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextFormField
+                                (
+                                    maxLines: 5,
+                                    decoration: InputDecoration
+                                    (
+                                        hintText: "Deskripsi Proyek",
+                                        labelText: "Deskripsi Proyek",
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
+                                        
+                                    ),
+                                    onChanged: (String? value)
+                                    {
+                                        setState(() => _description = value!); 
+                                    },
+                                    validator: (String? value)
+                                    {
+                                        if (value == null || value.trim().isEmpty)
+                                        {
+                                            return "Deksripsi proyek tidak boleh kosong!";
+                                        }
+                                        return null;
+                                    },
+                                )
+                            ),
+                            Padding
+                            (
+                                padding: const EdgeInsets.all(8.0),
+                                child: DropdownButtonFormField<String>
+                                (
+                                    decoration: InputDecoration
+                                    (
+                                        labelText: "Kategori Proyek",
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
+                                    ),
+                                    initialValue: _category,
+                                    items: _categories.map
+                                    (
+                                        (category) => DropdownMenuItem
+                                        (
+                                            value: category,
+                                            child: Text(category),
+                                        )
+                                    ).toList(),
+                                    onChanged: (String? newValue)
+                                    {
+                                        setState(() => _category = newValue!);
+                                    },
+                                )
+                            ),
+                            Padding
+                            (
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextFormField
+                                (
+                                    decoration: InputDecoration
+                                    (
+                                        hintText: "Contoh: Flutter, Django, Figma",
+                                        labelText: "Teknologi yang Digunakan",
+                                        border: OutlineInputBorder
+                                        (
+                                            borderRadius: BorderRadius.circular(5.0),
+                                        ),
+                                    ),
+                                    onChanged: (String? value) 
+                                    {
+                                        setState(() => _technologies = value!);
+                                    },
+                                ),
+                            ),
+                            Padding
+                            (
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextFormField
+                                (
+                                    decoration: InputDecoration
+                                    (
+                                        hintText: "URL Proyek (opsional)",
+                                        labelText: "Tautan Proyek",
+                                        border: OutlineInputBorder
+                                        (
+                                            borderRadius: BorderRadius.circular(5.0),
+                                        ),
+                                    ),
+                                onChanged: (String? value) 
+                                {
+                                    setState(() => _projectLink = value!);
+                                },
+                                ),
+                            ),
+                        ] 
+                    ),
+                )
            ),
         );
     }
