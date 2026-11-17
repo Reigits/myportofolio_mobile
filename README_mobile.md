@@ -1,0 +1,60 @@
+Nama : Ahmad Rafa Robyan
+
+NPM : 2506620721
+
+Kelas : PBP B
+
+A new update!
+
+### Tugas 1
+
+1. Elemen-elemen tersebut sangat berguna sekali karena dapat memudahkan para developer untuk menyusun struktur design web yang sesuai dan rapi.
+2. Beberapa tantangan yang saya harus hadapi untuk membuat web portofolio saya responsif adalah menentukan kalkulasi yang sesuai agar web tetap terlihat rapi dimanapun user mengaksesnya.
+3. Karena ini masih web statis, tentunya banyak sekali hal-hal yang belom bisa saya implementasi, salah satunya mungkin sebuah easter-egg minigame yang dapat dimainkan oleh user, sehingga kedepannya saya kepikiran untuk menambahkan hal tersebut ke web portofolio saya.
+
+### Tugas 2
+
+1. urls.py pada proyek merupakan arahan url yang akan menjadi titik universal suatu app yang menggunakan project tersebut, sedangkan urls.py pada app dapat berbeda-beda sesuai dengan ketentuan yang disediakan oleh masing-masing app.
+2. Penggunaan models pada portofolio agar membuat pengolahan data menjadi lebih mudah dan praktis karena tidak perlu mencari section pada file html website, serta hal ini memudahkan dalam hal pengolahan data berupa penghapusan maupun perubahan data tanpa merubah aspek
+html dari web tersebut.
+3. ```makemigrations``` digunakan untuk menginisiasi perubahan-perubahan yang telah dilakukan namun tidak secara langsung mengaplikasikannya ke web, sementara ```migrate``` mengeksekusi file migrasi yang telah dibuat dan diterapkan pada web yang telah kita kembangkan.
+
+### Tugas 3
+
+1. Penggunaan ModelForm yang disedikan oleh Django menjadi hal yang sangat berguna karena dapat memudahkan proses pembuatan form yang nantinya langsung dapat digunakan pada website yang sedang kita buat, sementara csrf token merupakan suatu pencegahan dari hal yang bernama
+*Cross Site Request Forgery* yang kurang lebih merupakan tindakan yang meliputi akses terhadap data korban yang nantinya dapat disalahgunakan oleh pihak pelaku yang melakukan hal tersebut, csrf token berguna agar kejadian tersebut dapat dicegah sebelum berdampak pada yang
+menjadi korban.
+2. JSON lebih banyak digunakan dari pada XML karena beberapa faktor, yang pertama adalah kecepatan, kemudian secara *readability*, JSON dapat lebih mudah untuk dibaca dari pada XML serta kompabilitas secara langsung dengan JavaScript dapat memudahkan implementasi API pada
+website yang dikehendaki.
+3. Model Django pada titik terdalamnya merupakan sebuah objek yang rumit sehingga tidak dapat dipahami oleh framework yang lain, sehingga *serialization* dilakukan untuk mengubah objek Django tersebut menjadi bagian-bagian queryset yang nantinya dapat diubah menjadi data
+JSON yang dapat digunakan atau sebaliknya dari JSON menjadi objek yang rumit dan digunakan kembali.
+
+### Tugas 5
+1. Debouncing adalah teknik yang dilakukan agar respons web terlihat seamless, contohnya pada tugas web ini, ketika kita mulai mengetik pada search bar, maka secara langsung nanti akan mem-fetch project dengan nama tersebut dan langsung menampilkannya tanpa harus mereload halaman.
+2. await pada fetch() berfungsi sebagai penahan agar kode tidak langsung mengeksekusi kode yang mungkin belom memiliki nilai sepenuhnya, seperti pada contoh fetch data dari Django, jika tidak memakai await maka akan ada kemungkinan data yang ingin diperlihatkan belum siap untuk ditampilkan sehingga menghasilkan error.
+3. XSS kurang lebih adalah injeksi sebuah kode JavaScript pada suatu web melalui celah keamananan, hal ini lebih rentan pada web yang menerapkan data dengan AJAX dari pada Django karena input yang masukan tidak akan dilakukan escaping atau pembersihan input, berbeda dengan Django yang sudah built-in mengimplementasikan teknik escaping untuk mencegah hal tersebut terjadi.
+
+### Tugas 6
+1. REST adalah sebuah framework komunikasi web yang menggunakan prinsip HTTP dengan prinsip *stateless*, JSON saja belum untuk menjadi hal yang RESTful karena setiap aksi harus didefinisikan sesuai dengan verb HTTP yang berlaku seperti GET, POST, PUT dan lain-lain, perbedaan antara PUT dan PATCH adalah dengan konten yang diubah, PUT memberbaharui seluruh elemen yang dipilih sehingga jika kita membiarkan suatu field kosong, sementara PATCH bersifat partial atau hanya mengubah bagian yang kita kehendaki jadi bagian yang tidak dirubah akan tetap sesuai dengan isi sebelumnya.
+2. Serializer berguna sebagai fondasi untuk mengubah objek kompleks models menjadi sebuah data JSON atau sebaliknya, kelebihannya adalah melakukan handling validasi yang terpusat sehingga input dijamin benar.
+3. Autentikasi adalah mengecek *siapa* yang datang, sementara otorisasi adalah *apa* yang bisa lakukan oleh seseorang yang sudah terautentikasi tersebut, pengecekan permission masih harus di cek lewat server karena menyembunyikan elemen HTML saja belum cukup karena penyerang dapat menggunakan manipulasi request HTTP request untuk mengakses halaman yang ingin disadap.
+4. CSRF Token masih diperlukan karena SessionAuthentication menyimpan kredesial dengan session cookie, sehingga jika tidak menyertakan CSRF Token, serangan Cross-Site Request Forgery dapat menyebabkan kebocoran data sehingga masih perlu dilakukan, kemudian *force_authenticate* tidak cukup untuk test jika CSRF berjalan atau tidak karena pada dasarnya *force_authenticate* melewati check CSRF.
+
+### Tugas 7
+1. Widget tree pada flutter adalah suatu relasi yang dikaitkan dengan masing-masing komponent yang sudah dibuat di flutter, sehingga masing-masing komponenet mempunyai ciri khas yang khusus sesuai dengan aspek yang kita kehendaki.
+2. Semua widget yang kita pakai adalah Scaffold, AppBar, Padding, Column dan Row, kemudian ada InfoCard dan ItemCard masing-masing widget memiliki fungsinya masing-masing, Scaffold menjadi fondasi utama struktur peletekan widget, AppBar kurang-lebihnya adalah header/footer untuk aplikasi, Padding, Collumn dan Row berfungsi sebagai pengatur tata letak komponent, InfoCard dan ItemCard adalah komponent yang kita buat yang nantinya bersifat reuseable.
+3. Class MaterialApp adalah class utama pada pembentukan aplikasi flutter karena class ini menjadi wrapper untuk keseleruhan keperluan yang digunakan untuk design material.
+4. Perbedaan antara Stateful dan Stateless widget adalah pada kinerja mereka, Stateless bersifat statis sehingga saat runtime, widget tersebut tidak dapat diubah atau bersifat immutable, kecuali ada data eksternal yang dapat merubah widget tersebut, sementata Stateful widget bersifat dinamis sehingga widget dapat berubah sesuai dengan interaksi pengguna saat runtime.
+5. BuildContext pada metode build digunakan sebagai referensi untuk mengambil sebuah data dari susunan widget tree yang berhubungan, sehingga nanti kita dapat mendapatkan data yang diinginkan dari suatu widget parent contohnya yang dapat digunakan di widget tersebut.
+6. Hot Reload mereload perubahan yang kita buat pada kode tanpa merestart aplikasi dan mempertahankan state, Hot Restart mereload VM yang digunakan dan menghilangkan state sementara Full Restart melakukan pengulangan secara penuh dari platform dan merecompile ulang kode-kode yang sudah dibuat.
+
+AI DISCLOSURE:
+
+- Saya menggunakan Gemini untuk mencari tahu terkait dengan syntax-syntax css yang saya belum sepenuhnya pahami.
+- Saya juga menggunakan pallete generator untuk mendapatkan warna yang sesuai dengan apa yang saya inginkan.
+- Ada satu error yang memerlukan bantuan AI, saat deploy web porto, ada kasus dimana model Education bagian field ```started_at``` dan ```ended_at``` masih tergolong sebagai timestamp, namun karena model menggunakan PositiveBigIntegerField web akan selalu mereturn 
+```ProgrammingError``` karena adanya mismatch data type saat input data, sehingga saya harus menulis beberapa perintah SQL secara langsung untuk menghapus column tersebut dan mengganti nya dengan column yang berbeda tipe.
+- Diketahui bahwa halaman project dapat diubah oleh siapa saja, maka dari itu saya mencari tahu dengan AI cara untuk mencegah tersebut, saat ini saya menggunakan decorator login required yang memerlukan akses admin untuk mengakses fitur tambah atau hapus project.
+- Tugas 3 mencangkup cukup banyak hal, yakni penerapan CRUD pada semua model yang ada, serta keinginan saya untuk membuat seluruh form dalam bentuk popover ternyata membutuhkan sangat banyak waktu, pada kasus ini saya menggunakan Gemini untuk mempercepat proses kodingan yang meliputi penulisan kode yang berulang, pastinya saya tetap cek terlebih dahulu untuk output yang telah diberikan oleh GenAI sehingga tidak ada error apapun yang nantinya dapat terjadi.
+- Sama seperti tugas 3, Tugas 5 ini kurang lebih mengarah pada refaktoring kode yang sudah kita tulis sebelumnya, sehingga penggunanaan GenAI Gemini digunakan untuk mempercepat proses penulisan kode yang kurang lebih sama, hal ini meliputi merubah struktur html yang awalnya Django heavy menjadi struktur AJAX yang sudah ditentukan oleh tutorial, serta generalisasi add_form yang dilakukan juga dihasilkan menggunakan penggunaan Gemini untuk mempercepat penulisan kode.
+- Tugas 6 kurang lebih merefactor kode yang sudah dibuat sebelumnya, maka saya menggunakan LLM untuk mempercepat pembaharuan dengan kode yang dikehendaki, saya juga mengetest kembali kode yang diberikan agar tidak terjadi hal yang tidak diinginkan.
