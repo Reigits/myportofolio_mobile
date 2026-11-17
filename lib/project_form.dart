@@ -199,6 +199,21 @@ class _ProjectFormPageState extends State<ProjectFormPage>
                                                         return AlertDialog
                                                         (
                                                             title: const Text('Proyek berhasil ditambahkan!'),
+                                                            content: SingleChildScrollView
+                                                            (
+                                                                child: Column
+                                                                (
+                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                    children: 
+                                                                    [
+                                                                        Text('Nama Proyek: $_projectName'),
+                                                                        Text('Deskripsi: $_description'),
+                                                                        Text('Kategori: $_category'),
+                                                                        Text('Teknologi: $_technologies'),
+                                                                        Text('Tautan: $_projectLink'),
+                                                                    ],
+                                                                )
+                                                            ),
                                                             actions:
                                                             [
                                                                 TextButton
