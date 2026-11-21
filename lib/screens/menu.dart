@@ -1,5 +1,4 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:myportofolio_mobile/screens/project_form.dart';
 import 'package:myportofolio_mobile/widgets/left_drawer.dart';
 import 'package:myportofolio_mobile/widgets/project_card.dart';
 
@@ -15,6 +14,7 @@ class MyHomePage extends StatelessWidget
   [
     ItemHomepage("Lihat Proyek", Icons.folder, Colors.red),
     ItemHomepage("Tambah Proyek", Icons.add_circle, Colors.green),
+    ItemHomepage("Tambah Pengalaman", Icons.add_circle, Colors.yellow),
     ItemHomepage("Logout", Icons.logout, Colors.blue),
   ];
 
@@ -91,13 +91,10 @@ class MyHomePage extends StatelessWidget
                     padding: const EdgeInsets.all(20),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    crossAxisCount: 3,
+                    crossAxisCount: 4,
                     // shrinkWrap agar ukuran kisi menyesuaikan tinggi konten anak.
                     shrinkWrap: true,
-                    children: items.map((ItemHomepage item) 
-                    {
-                      return ItemCard(item);
-                    }).toList(),
+                    children: items.map((ItemHomepage item) => ItemCard(item)).toList(),
                   ),
                 ],
               ),
