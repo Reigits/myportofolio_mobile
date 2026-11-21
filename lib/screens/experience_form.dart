@@ -114,7 +114,11 @@ class _ExperienceFormPageState extends State<ExperienceFormPage>
                                         {
                                             return "Nama pengalaman tidak boleh kosong!";
                                         }
-                                        return null;
+                                        if (value.trim().length > 100) 
+                                        {
+                                            return "Nama pengalaman maksimal 100 karakter!";
+                                        }
+                                    return null;
                                     }
                                 )
                             ),
@@ -143,6 +147,10 @@ class _ExperienceFormPageState extends State<ExperienceFormPage>
                                         {
                                             return "Deskripsi pengalaman tidak boleh kosong!";
                                         }
+                                        if (value.trim().length > 100) 
+                                        {
+                                            return "Deskripsi pengalaman maksimal 100 karakter!";
+                                        }
                                         return null;
                                     },
                                 )
@@ -170,6 +178,18 @@ class _ExperienceFormPageState extends State<ExperienceFormPage>
                                     {
                                         setState(() => _employment = newValue!);
                                     },
+                                    validator: (String? value)
+                                    {
+                                        if (value == null || value.trim().isEmpty) 
+                                        { 
+                                            return "Kategori pengalaman harus dipilih!";
+                                        }
+                                        if (!_employmentType.contains(value)) 
+                                        {
+                                            return "Kategori pengalaman tidak valid!";
+                                        }
+                                        return null;
+                                    }
                                 )
                             ),
 
