@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:myportofolio_mobile/router.dart';
 import 'package:myportofolio_mobile/screens/menu.dart';
 
 void main() 
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return MaterialApp
+    return MaterialApp.router
     (
+      routerConfig: appRouter,
       title: 'MyPortofolio',
       theme: ThemeData
       (
@@ -41,7 +43,6 @@ class MyApp extends StatelessWidget
         ),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:myportofolio_mobile/screens/experience_form.dart';
-import 'package:myportofolio_mobile/screens/project_form.dart';
 import 'package:myportofolio_mobile/screens/menu.dart';
+import 'package:go_router/go_router.dart';
 
 class ItemCard extends StatelessWidget 
 {
@@ -29,26 +28,8 @@ class ItemCard extends StatelessWidget
             (
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
             );
-            if(item.name == "Tambah Proyek")
-            {
-                Navigator.push
-                (
-                    context, MaterialPageRoute
-                    (
-                        builder: ((context) => const ProjectFormPage())
-                    )
-                );
-            }
-            if(item.name == "Tambah Pengalaman")
-            {
-                Navigator.push
-                (
-                    context, MaterialPageRoute
-                    (
-                        builder: ((context) => const ExperienceFormPage())
-                    )
-                );
-            }
+            if(item.name == "Tambah Proyek"){ context.go("/add-project");}
+            if(item.name == "Tambah Pengalaman"){ context.go("/add-experience");}
         },
         child: Container
         (
