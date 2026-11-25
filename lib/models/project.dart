@@ -9,7 +9,7 @@ class Project {
     required this.title,
     required this.description,
     required this.techStack,
-    required this.projectUrl,
+    this.projectUrl = '',
     this.projectImageUrl = '',
     this.id,
   });
@@ -23,9 +23,9 @@ class Project {
   final String title;
   final String description;
   final String techStack;
-  final String projectUrl;
 
   @JsonKey(defaultValue: '')
+  final String projectUrl;
   final String projectImageUrl;
 
   Map<String, dynamic> toJson() => _$ProjectToJson(this);
