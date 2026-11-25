@@ -32,7 +32,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Achievements: Projects')),
+      appBar: AppBar(title: const Text('Projects')),
       drawer: const LeftDrawer(),
       body: FutureBuilder<List<Project>>(
         future: _projectsFuture,
