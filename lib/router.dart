@@ -18,11 +18,12 @@ final GoRouter appRouter = GoRouter(
             return ProjectFormPage();
           },
         ),
-        GoRoute
-        (
-            path: 'add-experience',
-            builder: (BuildContext context, GoRouterState state) {return ExperienceFormPage();}
-        )
+        GoRoute(
+          path: 'add-experience',
+          builder: (BuildContext context, GoRouterState state) {
+            return ExperienceFormPage();
+          },
+        ),
       ],
     ),
   ],

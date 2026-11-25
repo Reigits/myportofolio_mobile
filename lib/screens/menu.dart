@@ -2,17 +2,14 @@ import 'package:material_ui/material_ui.dart';
 import 'package:myportofolio_mobile/widgets/left_drawer.dart';
 import 'package:myportofolio_mobile/widgets/project_card.dart';
 
-
-class MyHomePage extends StatelessWidget 
-{
+class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
   final String npm = "2506620721";
   final String nama = "Ahmad Rafa Robyan";
   final String kelas = "PBP B";
 
-  final List<ItemHomepage> items = 
-  [
+  final List<ItemHomepage> items = [
     ItemHomepage("Lihat Proyek", Icons.folder, Colors.red),
     ItemHomepage("Tambah Proyek", Icons.add_circle, Colors.green),
     ItemHomepage("Tambah Pengalaman", Icons.add_circle, Colors.yellow),
@@ -20,42 +17,29 @@ class MyHomePage extends StatelessWidget
   ];
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     // Scaffold menyediakan struktur visual dasar halaman (AppBar, Body, SnackBar).
-    return Scaffold
-    (
+    return Scaffold(
       // AppBar menampilkan bar bagian atas halaman aplikasi.
-      appBar: AppBar
-      (
-        title: const Text
-        (
+      appBar: AppBar(
+        title: const Text(
           'MyPortfolio',
-          style: TextStyle
-          (
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        iconTheme: const IconThemeData(color: Colors.white)
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: const LeftDrawer(),
       // Body halaman utama dengan padding di sekelilingnya.
-      body: Padding
-      (
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column
-        (
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: 
-          [
+          children: [
             // Baris horizontal untuk menampilkan 3 InfoCard secara sejajar.
-            Row
-            (
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: 
-              [
+              children: [
                 InfoCard(title: 'NPM', content: npm),
                 InfoCard(title: 'Name', content: nama),
                 InfoCard(title: 'Class', content: kelas),
@@ -65,20 +49,14 @@ class MyHomePage extends StatelessWidget
             const SizedBox(height: 16.0),
 
             // Bagian tengah: pesan sambutan dan kisi tombol menu portofolio.
-            Center
-            (
-              child: Column
-              (
-                children: 
-                [
-                  const Padding
-                  (
+            Center(
+              child: Column(
+                children: [
+                  const Padding(
                     padding: EdgeInsets.only(top: 16.0),
-                    child: Text
-                    (
+                    child: Text(
                       'Selamat datang di MyPortfolio Mobile!',
-                      style: TextStyle
-                      (
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
                       ),
@@ -86,8 +64,7 @@ class MyHomePage extends StatelessWidget
                   ),
 
                   // GridView menampilkan kartu tombol dalam tata letak kisi 3 kolom.
-                  GridView.count
-                  (
+                  GridView.count(
                     primary: true,
                     padding: const EdgeInsets.all(20),
                     crossAxisSpacing: 10,
@@ -95,7 +72,9 @@ class MyHomePage extends StatelessWidget
                     crossAxisCount: 4,
                     // shrinkWrap agar ukuran kisi menyesuaikan tinggi konten anak.
                     shrinkWrap: true,
-                    children: items.map((ItemHomepage item) => ItemCard(item)).toList(),
+                    children: items
+                        .map((ItemHomepage item) => ItemCard(item))
+                        .toList(),
                   ),
                 ],
               ),
@@ -104,11 +83,10 @@ class MyHomePage extends StatelessWidget
         ),
       ),
     );
-  } 
+  }
 }
 
-class InfoCard extends StatelessWidget 
-{
+class InfoCard extends StatelessWidget {
   // Kartu informasi yang menampilkan judul (title) dan isi (content).
   final String title;
   final String content;
@@ -116,27 +94,18 @@ class InfoCard extends StatelessWidget
   const InfoCard({super.key, required this.title, required this.content});
 
   @override
-  Widget build(BuildContext context) 
-  {
-    return Card
-    (
+  Widget build(BuildContext context) {
+    return Card(
       // Memberikan efek bayangan kartu elevasi 2 unit.
       elevation: 2.0,
-      child: Container
-      (
+      child: Container(
         // Menyesuaikan lebar kartu dengan proporsi layar (dibagi 3.5).
         width: MediaQuery.of(context).size.width / 3.5,
         padding: const EdgeInsets.all(16.0),
         // Menyusun teks title dan content secara vertikal.
-        child: Column
-        (
-          children: 
-          [
-            Text
-            (
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
+        child: Column(
+          children: [
+            Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8.0),
             Text(content),
           ],
@@ -146,12 +115,10 @@ class InfoCard extends StatelessWidget
   }
 }
 
-class ItemHomepage 
-{
+class ItemHomepage {
   final String name;
   final IconData icon;
   final Color color;
 
   ItemHomepage(this.name, this.icon, this.color);
 }
-

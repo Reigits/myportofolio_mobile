@@ -6,7 +6,9 @@ import 'package:myportofolio_mobile/main.dart';
 import 'package:myportofolio_mobile/services/api_client.dart';
 
 void main() {
-  testWidgets('App renders home screen smoke test', (WidgetTester tester) async {
+  testWidgets('App renders home screen smoke test', (
+    WidgetTester tester,
+  ) async {
     final mockHttpClient = MockClient((request) async {
       return http.Response('[]', 200);
     });
