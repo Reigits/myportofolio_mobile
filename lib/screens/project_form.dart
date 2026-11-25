@@ -212,15 +212,6 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                   onChanged: (String? value) {
                     setState(() => _projectUrl = value!);
                   },
-                  validator: (String? value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return "Project URL tidak boleh kosong!";
-                    }
-                    if (!_isValidUrl(value.trim())) {
-                      return "Masukkan URL yang valid (http:// atau https://)";
-                    }
-                    return null;
-                  },
                 ),
               ),
               // === Project Image URL (Optional) ===
